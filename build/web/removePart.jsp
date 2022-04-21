@@ -15,15 +15,18 @@
     <body>
         <h1>Remove Participant</h1>
         <%
+            String fname=request.getParameter("partName");
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/conference?autoReconnect=true&useSSL=false", "root", "1234");
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("DELETE FROM registration WHERE first_name ='"+partName+"'");
-            
-        }catch(Exception e){
-            out.print(e);
-        }
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/conference?autoReconnect=true&useSSL=false", "root", "1234");
+                Statement stmt = con.createStatement();
+                int name = stmt.executeUpdate("DELETE FROM registration WHERE first_name ='"+fname+"'");
+                
+                out.println("User removed");
+
+            } catch(Exception e){
+                    out.print(e);
+            }
         %>
     </body>
 </html>

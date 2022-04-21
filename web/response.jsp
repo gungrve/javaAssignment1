@@ -27,15 +27,16 @@
         String choice=request.getParameter("choice");
         String eventDate=request.getParameter("date");
         String size=request.getParameter("size");
+        String type=request.getParameter("patiType");
         
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/conference?autoReconnect=true&useSSL=false", "root", "1234");
             Statement stmt = con.createStatement();
-            stmt.executeUpdate("insert into conference.registration (first_name,last_name,area,address,city,state,post_code,country,email,phone_number,first_time,event_attend,tshirt_size) values ('"+fname+"','"+lname+"',"
+            stmt.executeUpdate("insert into conference.registration (first_name,last_name,area,address,city,state,post_code,country,email,phone_number,first_time,event_attend,tshirt_size,partType) values ('"+fname+"','"+lname+"',"
                     + "'"+area+"','"+addr1+"','"+city+"','"+state+"','"+pcode+"','"+country+"','"+email+"',"
-                    + "'"+phone+"','"+choice+"','"+eventDate+"','"+size+"')");
+                    + "'"+phone+"','"+choice+"','"+eventDate+"','"+size+"','"+type+"')");
             out.println("Data inserted");
             con.close();
             

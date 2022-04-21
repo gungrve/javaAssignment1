@@ -13,18 +13,21 @@
     </head>
     <body>
         <h1>Search Tool</h1>
-        <form action="viewParticipant.jsp">
-            <pre>
+        <form action="viewParticipant1.jsp">
+            <pre style="font-family: 'Avenir', Verdana, sans-serif; font-size: 15px">
                 <input type="radio" id="r1" name="choice" value="all"><label for="r1">View all participant</label><br>
-                <input type="radio" id="r2" name="choice" value="student"><label for="r2">View Student Participant</label><br>
-                <input type="radio" id="r3" name="choice" value="normal"><label for="r3">View Normal Participant</label><br>
+                <input type="radio" id="r2" name="choice" value="Student"><label for="r2">View Student Participant</label><br>
+                <input type="radio" id="r3" name="choice" value="Normal"><label for="r3">View Normal Participant</label><br>
                 <input type="submit" name="submit" value="View">
-
-                Insert Registered Participant Name <br>
-                <input type="text" name="partName"><br>
-                <button href="searchPart.jsp">Search</button> <button href="removePart.jsp">Remove</button><br>
-                            <a href="index.jsp">Back</a><br>
             </pre>
         </form>
+        <form action="searchPart.jsp">
+            <pre style="font-family: 'Avenir', Verdana, sans-serif; font-size: 15px">
+                Insert Registered Participant Name <br>
+                <input type="text" name="partName"><br>
+                <input type="submit" value="Search"> <a href="removePartForm.jsp">Remove</a> <a href="index.jsp">Home</a>
+            </pre>
+        </form>
+        
     </body>
 </html>
